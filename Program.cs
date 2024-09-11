@@ -39,27 +39,7 @@
 				Environment.Exit(0);
 			}
 
-			switch (userAnswer)
-			{
-				case "a":
-					userAnswer = question[randomQuestion].Answers[0];
-					break;
-				case "b":
-					userAnswer = question[randomQuestion].Answers[1];
-					break;
-				case "c":
-					userAnswer = question[randomQuestion].Answers[2];
-					break;
-				case "d":
-					userAnswer = question[randomQuestion].Answers[3];
-					break;
-				case "e":
-					userAnswer = question[randomQuestion].Answers[4];
-					break;
-				default:
-					Console.WriteLine("Invalid somehow.");
-					break;
-			}
+			userAnswer = question[randomQuestion].Answers[Array.FindIndex(options, x => x == userAnswer.ToUpper())];
 
 			if (userAnswer != question[randomQuestion].CorrectAnswer)
 			{
