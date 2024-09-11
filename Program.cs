@@ -24,7 +24,7 @@
 
 			Console.WriteLine(question[randomQuestion].Question + "\n");
 
-			char[] options = ['A', 'B', 'C', 'D'];
+			char[] options = ['A', 'B', 'C', 'D', 'E'];
 			for (int i = 0; i < question[randomQuestion].Answers.Length; i++)
 			{
 				Console.WriteLine($"{options[i]}. {question[randomQuestion].Answers[i]}");
