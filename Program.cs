@@ -20,14 +20,14 @@
 		{
 			List<Quiz> question = Questions.GetQuestions();
 
-			int randomIndex = new Random().Next(0, question.Count);
+			int randomQuestion = new Random().Next(0, question.Count);
 
-			Console.WriteLine(question[randomIndex].Question + "\n");
+			Console.WriteLine(question[randomQuestion].Question + "\n");
 
 			char[] options = ['A', 'B', 'C', 'D'];
-			for (int i = 0; i < question[randomIndex].Answers.Length; i++)
+			for (int i = 0; i < question[randomQuestion].Answers.Length; i++)
 			{
-				Console.WriteLine($"{options[i]}. {question[randomIndex].Answers[i]}");
+				Console.WriteLine($"{options[i]}. {question[randomQuestion].Answers[i]}");
 			}
 			Console.Write("\nAnswer: ");
 			string userAnswer = Console.ReadLine()!.ToLower();
@@ -42,25 +42,25 @@
 			switch (userAnswer) 
 			{
 				case "a":
-					userAnswer = question[randomIndex].Answers[0];
+					userAnswer = question[randomQuestion].Answers[0];
 					break;
 				case "b":
-					userAnswer = question[randomIndex].Answers[1];
+					userAnswer = question[randomQuestion].Answers[1];
 					break;
 				case "c":
-					userAnswer = question[randomIndex].Answers[2];
+					userAnswer = question[randomQuestion].Answers[2];
 					break;
 				case "d":
-					userAnswer = question[randomIndex].Answers[3];
+					userAnswer = question[randomQuestion].Answers[3];
 					break;
 				default:
 					Console.WriteLine("Invalid somehow.");
 					break;
 			}
 
-			if(userAnswer != question[randomIndex].CorrectAnswer)
+			if(userAnswer != question[randomQuestion].CorrectAnswer)
 			{
-				Console.WriteLine($"Wrong! The correct answer was: {options[Array.FindIndex(question[randomIndex].Answers, w => w == question[randomIndex].CorrectAnswer)]}. {question[randomIndex].CorrectAnswer}");
+				Console.WriteLine($"Wrong! The correct answer was: {options[Array.FindIndex(question[randomQuestion].Answers, w => w == question[randomQuestion].CorrectAnswer)]}. {question[randomQuestion].CorrectAnswer}");
 				Environment.Exit(0);
 			}
 
