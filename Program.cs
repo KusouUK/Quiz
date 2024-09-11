@@ -18,8 +18,7 @@
 
 		static void Main()
 		{
-			List<Quiz> question = new List<Quiz>();
-			question.AddRange(Questions.GetQuestions());
+			List<Quiz> question = Questions.GetQuestions();
 
 			int randomIndex = new Random().Next(0, question.Count);
 
